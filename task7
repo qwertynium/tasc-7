@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+import static java.lang.System.out;
+
+public class Main {
+    public static void main(String[] args) {
+        out.print(VvediteZnacheniaVMaciv());
+
+
+    }
+
+    public static int VvediteZnacheniaVMaciv() {
+        double[] a;
+        int n;
+        int b = 0;
+        int schet = 0;
+        int schet1 = 0;
+        int y = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        out.println("Введите количество места в массиве");
+        n = scanner.nextInt();
+        a = new double[n];
+        out.println("Есили хотите ввести цифры вручную напишите 1. Если автоматически 2");
+        int avto = scanner.nextInt();
+        if (avto == 1) {
+            for(int i = 1; i < n; i++){
+                b = scanner.nextInt();
+                a[i] = b;
+                schet += a[i];
+            }
+        } else if (avto == 2) {
+            for (int i = 1; i < n; i++) {
+
+                a[i] = (Math.random() * 1000);
+                out.println(a[i]);
+                schet += a[i];
+            }
+
+        } else {
+            out.print("Число введено неправильно. Повторите попытку");
+        } schet = schet/2;
+        for (int i = 1; i < n; i++){
+
+            if(a[i] >= schet){
+                schet1 ++;
+                if (schet == a[i]){
+                    y++;
+                }
+            }
+        }if(y == n){
+            schet1 = 0;
+        } else { }return schet1;
+    }
+    }
